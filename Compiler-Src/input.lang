@@ -1,0 +1,18 @@
+// Test Case 2: Simple If-Else Logic
+// Focus: 'const', 'if-else', and the '>' operator.
+
+print "Running Test 2: If-Else Logic...";
+
+const user_age = 21;
+const required_age = 18;
+let access_code = 0;
+
+if (user_age >= required_age) {
+print "Access Wowo.";
+access_code = 1;
+} else {
+print "Access Denied.";
+access_code = -1;
+}
+
+return access_code;

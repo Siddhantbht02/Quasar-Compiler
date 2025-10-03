@@ -1,0 +1,156 @@
+:root{
+  --wallpaper-path: url('./Project/wallpaper.jpg'), url('./wallpaper.jpg');
+  --bg: #030405;
+  --panel-tint: rgba(12,14,16,0.62);
+  --panel-strong: rgba(18,20,22,0.78);
+  --glass-blur: 8px;
+  --accent: #1ea7ff;
+  --accent-2: #2ecc71;
+  --muted: #8b98a6;
+  --text: #dce9f5;
+  --border: rgba(255,255,255,0.06);
+  --sidebar-width: 280px;
+  --sidebar-collapsed: 64px;
+  --transition: 220ms cubic-bezier(.2,.9,.2,1);
+  --easing: cubic-bezier(.2,.9,.2,1);
+  --header-h: 64px;
+  --terminal-start: 180px;
+  --terminal-min: 100px;
+  --radius: 10px;
+}
+
+/* Base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#ide-container{height:100%}
+body{
+  font-family:'Roboto',system-ui,-apple-system,'Fira Code',monospace;
+  background:var(--bg);color:var(--text);font-size:14px;overflow:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+
+/* Wallpaper & overlay */
+.ide-container{
+  position:relative;height:100vh;width:100vw;display:flex;flex-direction:column;
+  background-image:var(--wallpaper-path); background-size:cover; background-position:center center; background-repeat:no-repeat; background-attachment:fixed;
+}
+.ide-container::before{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(3,6,8,0.46), rgba(3,6,8,0.74));z-index:0;backdrop-filter: blur(var(--glass-blur)) saturate(110%);
+}
+header,main,footer{position:relative;z-index:1}
+
+/* Header - clean */
+header{
+  height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);backdrop-filter: blur(2px);
+}
+.header-left{display:flex;align-items:center;gap:12px;position:relative}
+.brand{display:flex;align-items:center;gap:10px;user-select:none;pointer-events:none;margin-left:6px}
+.brand .logo{width:34px;height:34px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),#0d7bd6);color:#fff;font-weight:700;font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,0.45) inset}
+.brand .brand-name{color:var(--text);font-weight:700;font-size:1rem;letter-spacing:0.4px}
+
+/* Hamburger */
+#sidebar-toggle{background:transparent;color:var(--muted);border:1px solid transparent;padding:8px;border-radius:8px;cursor:pointer;transition:all var(--transition)}
+#sidebar-toggle:hover{background:rgba(255,255,255,0.02);color:var(--text);transform:translateY(-2px)}
+
+/* header buttons */
+.header-buttons button{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 10px;border-radius:8px;cursor:pointer;transition:all var(--transition);font-weight:600;margin-right:6px}
+.header-buttons button:hover{color:var(--text);border-color:var(--border);transform:translateY(-2px)}
+
+/* Compile button */
+#compile-btn{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:9px 14px;border-radius:10px;font-weight:700;cursor:pointer;transition:transform 140ms var(--easing),box-shadow var(--transition);box-shadow:0 6px 18px rgba(0,0,0,0.45) inset;
+}
+#compile-btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,0,0,0.55) inset}
+#compile-btn:disabled{opacity:0.6;cursor:not-allowed}
+
+/* Main layout */
+main{display:flex;align-items:stretch;flex:1;min-height:0}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar-width);min-width:var(--sidebar-collapsed);max-width:520px;
+  background:linear-gradient(180deg,var(--panel-tint),var(--panel-strong));
+  border-right:1px solid var(--border);padding:12px;overflow:auto;transition:width var(--transition),transform var(--transition),box-shadow var(--transition);backdrop-filter:blur(6px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.45) inset;
+}
+.sidebar.collapsed{width:var(--sidebar-collapsed)}
+
+/* sidebar header */
+.sidebar-header{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:0.7px;padding:6px 8px;text-transform:uppercase;margin-bottom:8px}
+.sidebar.collapsed .sidebar-header{opacity:0;transform:translateX(-6px);pointer-events:none}
+
+/* file-tree */
+.file-tree{padding-bottom:8px}
+.file-category{margin-bottom:10px}
+.category-header{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;color:var(--text);font-weight:700;transition:background var(--transition);user-select:none;white-space:nowrap;font-size:14px}
+.category-header:hover{background:rgba(255,255,255,0.02)}
+.category-header.collapsed i{transform:rotate(-90deg);color:var(--muted);transition:transform var(--transition)}
+
+/* file lists */
+.file-list{list-style:none;margin-top:8px;padding-left:6px;max-height:900px;overflow:hidden;transition:max-height 300ms var(--easing),opacity 220ms var(--transition),padding 220ms var(--transition)}
+.file-list.collapsed{max-height:0;opacity:0;padding-top:0;margin-top:0}
+.file-list li{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:8px;color:var(--muted);cursor:pointer;transition:background var(--transition),transform 140ms var(--easing);white-space:nowrap;font-family:"Fira Code",monospace;font-size:13px}
+.file-list li i{width:18px;text-align:center;font-size:14px}
+.file-list li .filename-text{display:inline-block;vertical-align:middle}
+.sidebar.collapsed .file-list li{justify-content:center;gap:0;padding-left:6px;padding-right:6px;font-size:0}
+.sidebar.collapsed .file-list li i{font-size:18px}
+.file-list li:hover{background:rgba(255,255,255,0.02);color:var(--text);transform:translateX(3px)}
+.file-list li.active{background:linear-gradient(90deg, rgba(30,167,255,0.07), rgba(44,195,107,0.03));border-left:3px solid var(--accent);padding-left:8px;color:var(--text)}
+
+/* icon helpers */
+.icon-c{color:#7fb3ff}
+.icon-h{color:#caa3ff}
+.icon-lang{color:#f1c40f}
+
+/* resizer */
+.resizer{width:6px;cursor:col-resize;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);transition:background var(--transition)}
+.resizer:hover{background:rgba(255,255,255,0.03)}
+
+/* Editor */
+.editor-area{flex:1;display:flex;flex-direction:column;min-width:0;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))}
+.tabs{display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--border);background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent)}
+.tab{padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);transition:all var(--transition)}
+.tab.active{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:var(--text);font-weight:700;transform:translateY(-2px)}
+#code-editor{flex:1;width:100%;min-height:0;padding:18px;border:none;resize:none;font-family:'Fira Code',monospace;font-size:13px;color:var(--text);background:linear-gradient(180deg, rgba(6,8,10,0.46), rgba(6,8,10,0.64));outline:none;caret-color:var(--accent);line-height:1.5;transition:box-shadow var(--transition);border-radius:8px}
+#code-editor:focus{box-shadow:0 10px 40px rgba(0,0,0,0.6) inset;outline:2px solid rgba(30,167,255,0.12)}
+
+/* Footer & terminal - status bar removed, terminal user-resizable via JS grabber */
+footer{border-top:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));z-index:1;padding:10px 12px 18px 12px;display:flex;flex-direction:column;gap:8px}
+.terminal-header{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--muted);padding:6px 4px;border-radius:8px;background:rgba(255,255,255,0.01);width:100%}
+.terminal-header #status-text{margin-left:auto;color:var(--muted);font-weight:600;font-size:0.94rem;background:rgba(255,255,255,0.01);padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+/* terminal-grabber: visible horizontal handle for resizing */
+.terminal-grabber{
+  height:8px; width:100%; cursor:row-resize; border-radius:6px; align-self:stretch;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display:block;
+  transition: background var(--transition);
+}
+.terminal-grabber:hover{ background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); }
+
+/* terminal-body: JS will control height; css just provides min/max and scroll */
+.terminal-body{height:var(--terminal-start);min-height:var(--terminal-min);max-height:70vh;overflow:auto;padding:12px;font-family:'Fira Code',monospace;font-size:13px;background:linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.14));border-radius:8px;color:var(--text);box-shadow:0 6px 18px rgba(0,0,0,0.45) inset}
+.terminal-body .line{margin-bottom:8px;line-height:1.5;white-space:pre-wrap;color:var(--text)}
+.terminal-body .line.command{color:#9fd9ff;font-weight:600}
+.terminal-body .line.output-success{color:var(--accent-2);font-weight:700}
+.terminal-body .line.program-output{color:var(--text)}
+
+/* hide original status bar if it exists */
+#status-bar{display:none !important}
+
+/* responsive: mobile hides sidebar off-canvas */
+@media (max-width:920px){
+  .sidebar{position:absolute;top:var(--header-h);left:0;height:calc(100vh - var(--header-h) - 40px);transform:translateX(0);z-index:6}
+  .sidebar.collapsed{transform:translateX(-110%)}
+  .resizer{display:none}
+  main{flex-direction:column}
+  #code-editor{padding:12px}
+}
+
+/* focus outlines */
+#sidebar-toggle:focus,.category-header:focus,.file-list li:focus,#compile-btn:focus{outline:2px solid rgba(30,167,255,0.12);outline-offset:2px}
+
+/* entrance animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+header,.sidebar,.editor-area,footer{animation:fadeUp 360ms var(--easing) both}

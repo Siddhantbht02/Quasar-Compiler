@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quasar — Compiler IDE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+<body>
+    <div id="ide-container" class="ide-container">
+        <header>
+            <div class="header-left">
+                <button id="sidebar-toggle" title="Toggle File Explorer"><i class="fas fa-bars"></i></button>
+
+                <!-- brand element (clean, same design language) -->
+                <div class="brand" aria-hidden="false">
+                    <i class="fas fa-meteor"></i>
+
+                    <span class="brand-name">Quasar</span>
+                </div>
+            </div>
+
+            <button id="compile-btn">Compile &gt;&gt;</button>
+        </header>
+
+        <main>
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-header">PROJECT EXPLORER</div>
+                <div class="file-tree">
+                    <div class="file-category">
+                        <div class="category-header" data-category="c-source">
+                            <i class="fas fa-chevron-down"></i> C Source
+                        </div>
+                        <ul id="c-source-files" class="file-list"></ul>
+                    </div>
+
+                    <div class="file-category">
+                        <div class="category-header" data-category="assembly">
+                            <i class="fas fa-chevron-down"></i> Explorer
+                        </div>
+                        <ul id="assembly-files" class="file-list"></ul>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="resizer" id="resizer"></div>
+
+            <section class="editor-area">
+                <div class="tabs">
+                    <div id="editor-tab" class="tab active"></div>
+                </div>
+
+                <textarea id="code-editor" spellcheck="false"></textarea>
+            </section>
+        </main>
+
+        <footer>
+            <div class="terminal-header">
+                <i class="fas fa-terminal"></i>
+                <span>TERMINAL</span>
+                <!-- keep status-text here so your JS continues to work -->
+                <span id="status-text" class="status-text">Ready</span>
+            </div>
+
+            <div id="terminal" class="terminal-body"></div>
+            <!-- status-bar removed as requested -->
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
