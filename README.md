@@ -1,6 +1,19 @@
-# Quasar Compiler
+<div align="center">
 
-A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.
+# ✨ Quasar Compiler ✨
+
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
+![Assembly](https://img.shields.io/badge/Assembly-654FF0?logo=assemblyscript&logoColor=white)
+![Flex](https://img.shields.io/badge/Flex-Lexer-orange)
+![Bison](https://img.shields.io/badge/Bison-Parser-yellow)
+![Platform](https://img.shields.io/badge/Platform-x86--32bit-red)
+
+**A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.**
+
+</div>
+
+---
 
 ## Overview
 
