@@ -21,6 +21,13 @@
 
 ---
 
+## IDE View
+
+<div align="center">
+  <img src="./screenshots/desktop1.png" width="600" alt="Screenshot"/>
+</div>
+
+
 ## Overview
 
 The Quasar Compiler is a comprehensive implementation of modern compiler theory, demonstrating the entire compilation pipeline from source code tokenization to machine code generation. This project serves as an educational tool for computer science students, a portfolio piece for aspiring systems programmers, and a reference for language design enthusiasts.
