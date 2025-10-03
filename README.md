@@ -10,10 +10,9 @@
 [![Platform](https://img.shields.io/badge/Platform-x86--32bit-2dd4bf?style=for-the-badge)](https://en.wikipedia.org/wiki/X86)
 [![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler-0e7490?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/graphs/contributors)
 [![Version](https://img.shields.io/badge/Version-1.0.0-0891b2?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/releases)
-[![Build](https://img.shields.io/badge/Build-Passing-0f766e?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
-[![Tests](https://img.shields.io/badge/Tests-Passing-14b8a6?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
+[![Build](https://img.shields.io/badge/Build-Passing-06b6d4?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
+[![Tests](https://img.shields.io/badge/Tests-Passing-10b981?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
 [![Coverage](https://img.shields.io/badge/Coverage-95%25-0d9488?style=for-the-badge)](https://codecov.io/gh/Siddhantbht02/Quasar-Compiler)
-[![Status](https://img.shields.io/badge/Status-Active-115e59?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler)
 
 > A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.
 
@@ -143,6 +142,8 @@ Execute the following commands in the project's root directory:
 
 ```bash
 bison -dy parser.y
+```
+ ```ssh
 flex scanner.l
 ```
 
@@ -255,7 +256,6 @@ git push origin feature/MyNewFeature
 
 Navigate to the original repository and click "New Pull Request". Provide a clear description of your changes and submit the pull request for review.
 
----
 
 ## License
 
