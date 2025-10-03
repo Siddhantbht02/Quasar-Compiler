@@ -24,7 +24,7 @@
 ## IDE View
 
 <div align="center">
-  <img src="./screenshots/desktop1.png" width="600" alt="Screenshot"/>
+  <img src="./screenshots/desktop1.png" alt="Screenshot"/>
 </div>
 
 
