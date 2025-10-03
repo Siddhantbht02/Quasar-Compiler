@@ -8,7 +8,6 @@
 [![Flex](https://img.shields.io/badge/Flex-Lexer-0f766e?style=for-the-badge)](https://github.com/westes/flex)
 [![Bison](https://img.shields.io/badge/Bison-Parser-164e63?style=for-the-badge)](https://www.gnu.org/software/bison/)
 [![Platform](https://img.shields.io/badge/Platform-x86--32bit-2dd4bf?style=for-the-badge)](https://en.wikipedia.org/wiki/X86)
-[![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler-0e7490?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/graphs/contributors)
 [![Version](https://img.shields.io/badge/Version-1.0.0-0891b2?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/releases)
 [![Build](https://img.shields.io/badge/Build-Passing-06b6d4?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
 [![Tests](https://img.shields.io/badge/Tests-Passing-10b981?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
