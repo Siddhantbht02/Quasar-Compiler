@@ -8,6 +8,7 @@
 ![Flex](https://img.shields.io/badge/Flex-Lexer-orange)
 ![Bison](https://img.shields.io/badge/Bison-Parser-yellow)
 ![Platform](https://img.shields.io/badge/Platform-x86--32bit-red)
+![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler?color=green)
 
 **A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.**
 
