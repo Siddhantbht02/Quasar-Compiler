@@ -1,23 +1,21 @@
 <div align="center">
 
-# Quasar Compiler
+# ☄️ Quasar Compiler
 
-![License](https://img.shields.io/badge/License-MIT-20B2AA.svg)
-![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white&labelColor=20B2AA)
-![Assembly](https://img.shields.io/badge/Assembly-654FF0?logo=assemblyscript&logoColor=white&labelColor=20B2AA)
-![Flex](https://img.shields.io/badge/Flex-Lexer-20B2AA)
-![Bison](https://img.shields.io/badge/Bison-Parser-20B2AA)
-![Platform](https://img.shields.io/badge/Platform-x86--32bit-20B2AA)
-![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler?color=20B2AA)
-![Version](https://img.shields.io/badge/Version-1.0.0-20B2AA)
-![Build](https://img.shields.io/badge/Build-Passing-20B2AA)
-![Tests](https://img.shields.io/badge/Tests-Passing-20B2AA)
-![Coverage](https://img.shields.io/badge/Coverage-95%25-20B2AA)
-![Status](https://img.shields.io/badge/Status-Active-20B2AA)
-![Issues](https://img.shields.io/github/issues/Siddhantbht02/Quasar-Compiler?color=20B2AA)
-![Last Commit](https://img.shields.io/github/last-commit/Siddhantbht02/Quasar-Compiler?color=20B2AA)
+[![License](https://img.shields.io/badge/License-MIT-14b8a6?style=for-the-badge)](LICENSE)
+[![C](https://img.shields.io/badge/C-00599C-0d9488?style=for-the-badge&logo=c&logoColor=white)](https://gcc.gnu.org/)
+[![Assembly](https://img.shields.io/badge/Assembly-654FF0-115e59?style=for-the-badge&logo=assemblyscript&logoColor=white)](https://www.nasm.us/)
+[![Flex](https://img.shields.io/badge/Flex-Lexer-0f766e?style=for-the-badge)](https://github.com/westes/flex)
+[![Bison](https://img.shields.io/badge/Bison-Parser-164e63?style=for-the-badge)](https://www.gnu.org/software/bison/)
+[![Platform](https://img.shields.io/badge/Platform-x86--32bit-2dd4bf?style=for-the-badge)](https://en.wikipedia.org/wiki/X86)
+[![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler-0e7490?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/graphs/contributors)
+[![Version](https://img.shields.io/badge/Version-1.0.0-0891b2?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/releases)
+[![Build](https://img.shields.io/badge/Build-Passing-0f766e?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
+[![Tests](https://img.shields.io/badge/Tests-Passing-14b8a6?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler/actions)
+[![Coverage](https://img.shields.io/badge/Coverage-95%25-0d9488?style=for-the-badge)](https://codecov.io/gh/Siddhantbht02/Quasar-Compiler)
+[![Status](https://img.shields.io/badge/Status-Active-115e59?style=for-the-badge)](https://github.com/Siddhantbht02/Quasar-Compiler)
 
-**A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.**
+> A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.
 
 </div>
 
@@ -30,32 +28,24 @@ The Quasar Compiler is a comprehensive implementation of modern compiler theory,
 ## The Quasar Language
 
 Quasar is a small, statically-typed procedural language with syntax familiar to C, Java, and JavaScript developers. It emphasizes clarity and simplicity while maintaining robust type safety.
-
 ### Language Features
 
-#### Variables and Types
-- **Data Types**: `Int` (integers), `Dub` (double-precision floating-point), `Bool` (true/false)
-- **Variable Declaration**: `let my_var = 10;` (mutable)
-- **Constant Declaration**: `const PI = 3.14;` (immutable)
-- **String Literals**: Supported for output via `print`
-
-#### Operators
-- **Arithmetic**: `+`, `-`, `*`, `/`, `%`
-- **Relational & Equality**: `==`, `!=`, `<`, `>`, `<=`, `>=`
-- **Logical**: `&&` (AND with short-circuiting), `||` (OR), `!` (NOT)
-- **Assignment**: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
-- **Increment/Decrement**: `++`, `--` (prefix and postfix)
-
-#### Control Flow
-- **Conditionals**: `if-else` statements with nesting support
-- **Loops**: `for` and `while` loops
-- **Loop Control**: `break` and `continue` statements
-
-#### Built-in Functions
-- **Output**: `print "Hello, World!";`
-- **Program Exit**: `return` statement with integer exit code
-
-## Sample Programs
+| Category | Feature | Syntax & Description |
+|----------|---------|----------------------|
+| **Variables & Types** | Data Types | `Int` (integers), `Dub` (floating-point), `Bool` (true/false) |
+| | Variable Declaration | `let my_var = 10;` (mutable) |
+| | Constant Declaration | `const PI = 3.14;` (immutable) |
+| | String Literals | Supported for output via `print` |
+| **Operators** | Arithmetic | `+`, `-`, `*`, `/`, `%` |
+| | Relational & Equality | `==`, `!=`, `<`, `>`, `<=`, `>=` |
+| | Logical | `&&` (AND), `\|\|` (OR), `!` (NOT) |
+| | Assignment | `=`, `+=`, `-=`, `*=`, `/=`, `%=` |
+| | Increment/Decrement | `++`, `--` (prefix and postfix) |
+| **Control Flow** | Conditionals | `if-else` statements with nesting support |
+| | Loops | `for` and `while` loops |
+| | Loop Control | `break` and `continue` statements |
+| **Built-in Functions** | Output | `print "Hello, World!";` |
+| | Program Exit | `return` statement with integer exit code |## Sample Programs
 
 ### Example 1: for Loop with break
 
@@ -179,46 +169,28 @@ gcc -m32 -o final_program.exe main.c output.s
 
 ## Project Structure
 
+```mermaid
+sequenceDiagram
+    participant S as Source Code
+    participant L as Lexer (scanner.l)
+    participant P as Parser (parser.y)
+    participant ST as Symbol Table (symtab.c)
+    participant SA as Semantic Analysis (semantic.c)
+    participant AST as AST (ast_printer.c)
+    participant ICG as Intermediate Code (icg.c)
+    participant CG as Code Generator (codegen.c)
+    participant O as Output Assembly
+
+    S->>L: Input Quasar Source
+    L->>P: Generate Tokens
+    P->>ST: Build Symbol Table
+    P->>AST: Construct Abstract Syntax Tree
+    AST->>SA: Perform Semantic Analysis
+    SA->>ICG: Generate Intermediate Code
+    ICG->>CG: Convert to x86 Assembly
+    CG->>O: Produce .asm File
 ```
-quasar-compiler/
-├── parser.y              # Bison grammar specification
-├── scanner.l             # Flex lexical specification
-├── symtab.c             # Symbol table implementation
-├── semantic.c           # Semantic analysis
-├── ast_printer.c        # AST visualization
-├── icg.c                # Intermediate code generation
-├── codegen.c            # x86 assembly code generation
-├── main.c               # Host program wrapper
-└── examples/            # Sample Quasar programs
-```
 
-## License
-
-This project is licensed under the MIT License - see below for details.
-
-```
-MIT License
-
-Copyright (c) 2025 Quasar Compiler Project
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ## Contributing
 
@@ -245,7 +217,9 @@ Before making any changes, create a new branch for your feature or bug fix. Do n
 ```bash
 # For a new feature:
 git checkout -b feature/MyNewFeature
+```
 
+```bash
 # For a bug fix:
 git checkout -b fix/BugDescription
 ```
@@ -276,4 +250,8 @@ Navigate to the original repository and click "New Pull Request". Provide a clea
 
 ---
 
-**Happy Compiling! 🚀** We appreciate your contributions to making Quasar better!
+## License
+
+[![License](https://img.shields.io/badge/License-MIT-14b8a6?style=for-the-badge)](LICENSE)
+
+This project is licensed under the MIT License - see below for details.
