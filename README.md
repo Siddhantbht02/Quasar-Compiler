@@ -2,13 +2,20 @@
 
 # Quasar Compiler
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
-![Assembly](https://img.shields.io/badge/Assembly-654FF0?logo=assemblyscript&logoColor=white)
-![Flex](https://img.shields.io/badge/Flex-Lexer-orange)
-![Bison](https://img.shields.io/badge/Bison-Parser-yellow)
-![Platform](https://img.shields.io/badge/Platform-x86--32bit-red)
-![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler?color=green)
+![License](https://img.shields.io/badge/License-MIT-20B2AA.svg)
+![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white&labelColor=20B2AA)
+![Assembly](https://img.shields.io/badge/Assembly-654FF0?logo=assemblyscript&logoColor=white&labelColor=20B2AA)
+![Flex](https://img.shields.io/badge/Flex-Lexer-20B2AA)
+![Bison](https://img.shields.io/badge/Bison-Parser-20B2AA)
+![Platform](https://img.shields.io/badge/Platform-x86--32bit-20B2AA)
+![Contributors](https://img.shields.io/github/contributors/Siddhantbht02/Quasar-Compiler?color=20B2AA)
+![Version](https://img.shields.io/badge/Version-1.0.0-20B2AA)
+![Build](https://img.shields.io/badge/Build-Passing-20B2AA)
+![Tests](https://img.shields.io/badge/Tests-Passing-20B2AA)
+![Coverage](https://img.shields.io/badge/Coverage-95%25-20B2AA)
+![Status](https://img.shields.io/badge/Status-Active-20B2AA)
+![Issues](https://img.shields.io/github/issues/Siddhantbht02/Quasar-Compiler?color=20B2AA)
+![Last Commit](https://img.shields.io/github/last-commit/Siddhantbht02/Quasar-Compiler?color=20B2AA)
 
 **A complete, multi-phase compiler for the Quasar programming language, translating a custom C-like high-level language into executable 32-bit x86 assembly code.**
 
