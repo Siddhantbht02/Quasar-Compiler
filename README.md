@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✨ Quasar Compiler ✨
+# Quasar Compiler
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
