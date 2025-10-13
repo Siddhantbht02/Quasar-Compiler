@@ -124,7 +124,7 @@ Annotated AST → [ICG] → TAC → [Code Generator] → Assembly
 4. **Intermediate Code Generation (ICG)**: Translates annotated AST into machine-independent Three-Address Code (TAC)
 5. **Final Code Generation**: Converts TAC into executable 32-bit x86 assembly code (AT&T syntax)
 
-## Building and Running
+### Building and Running
 
 ### Prerequisites
 
@@ -174,7 +174,7 @@ gcc -m32 -o final_program.exe main.c output.s
 ./final_program.exe
 ```
 
-## Project Structure
+### Project Structure
 
 ```mermaid
 sequenceDiagram
